@@ -1,0 +1,60 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x56496bea99b0 .scope module, "not_tb" "not_tb" 2 2;
+ .timescale 0 0;
+v0x56496bece180_0 .var "a", 0 0;
+RS_0x7f409b31b108 .resolv tri, L_0x56496bece3d0, L_0x56496bece4b0, L_0x56496bece540;
+v0x56496bece220_0 .net8 "out", 0 0, RS_0x7f409b31b108;  3 drivers, strength-aware
+S_0x56496bebc760 .scope module, "gate" "Not" 2 5, 3 2 0, S_0x56496bea99b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "out";
+v0x56496becdfb0_0 .net "a", 0 0, v0x56496bece180_0;  1 drivers
+v0x56496bece0a0_0 .net8 "out", 0 0, RS_0x7f409b31b108;  alias, 3 drivers, strength-aware
+S_0x56496bebc940 .scope module, "gate" "Nand" 3 3, 4 1 0, S_0x56496bebc760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x7f409b2d2018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x56496bece330 .functor NMOS 1, L_0x7f409b2d2018, v0x56496bece180_0, C4<0>, C4<0>;
+L_0x56496bece3d0 .functor NMOS 1, L_0x56496bece330, v0x56496bece180_0, C4<0>, C4<0>;
+L_0x7f409b2d2060 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x56496bece4b0 .functor PMOS 1, L_0x7f409b2d2060, v0x56496bece180_0, C4<0>, C4<0>;
+L_0x7f409b2d20a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x56496bece540 .functor PMOS 1, L_0x7f409b2d20a8, v0x56496bece180_0, C4<0>, C4<0>;
+v0x56496bebd3d0_0 .net/2s *"_ivl_0", 0 0, L_0x7f409b2d2018;  1 drivers
+v0x56496becda80_0 .net/2s *"_ivl_2", 0 0, L_0x7f409b2d2060;  1 drivers
+v0x56496becdb60_0 .net/2s *"_ivl_4", 0 0, L_0x7f409b2d20a8;  1 drivers
+v0x56496becdc20_0 .net "a", 0 0, v0x56496bece180_0;  alias, 1 drivers
+v0x56496becdce0_0 .net "b", 0 0, v0x56496bece180_0;  alias, 1 drivers
+v0x56496becddd0_0 .net8 "o1", 0 0, L_0x56496bece330;  1 drivers, strength-aware
+v0x56496becde70_0 .net8 "out", 0 0, RS_0x7f409b31b108;  alias, 3 drivers, strength-aware
+    .scope S_0x56496bea99b0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56496bece180_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x56496bece180_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x56496bea99b0;
+T_1 ;
+    %vpi_call 2 11 "$monitor", "a=%d out=%d\012", v0x56496bece180_0, v0x56496bece220_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "not_tb.v";
+    "./not.v";
+    "./nand.v";

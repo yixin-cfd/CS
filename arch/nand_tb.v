@@ -15,6 +15,6 @@ module  nand_tb;
     end
 
     initial begin
-        $monitor("a=%d b =%d out=%d\n", a,b,out);
+        $monitor("a=%d b=%d out=%d\n", a,b,out);
     end
 endmodule
