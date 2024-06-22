@@ -1,5 +1,7 @@
+`ifndef OR_V
+`define OR_V
 `include "nand.v"
-module  Or (
+module Or(
     input a, b,
     output out
 );
@@ -7,3 +9,5 @@ module  Or (
     Nand gate2(b, b, o2);
     Nand gate3(o1, o2, out);
 endmodule
+
+`endif
