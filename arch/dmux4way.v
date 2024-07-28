@@ -1,3 +1,8 @@
+`ifndef DMUX4WAY_V
+`define DMUX4WAY_V
+`include "not.v"
+`include "and.v"
+`include "dmux.v"
 /**
  * 4-way demultiplexor:
  * {a, b, c, d} = {in, 0, 0, 0} if sel == 00
@@ -18,3 +23,4 @@ module DMux4Way(input in, input[1:0] sel, output a,b,c,d);
   DMux g9(in, sel11, d2, d);
   DMux g10(in, sel10, d3, c);
 endmodule
+`endif 

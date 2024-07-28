@@ -1,3 +1,7 @@
+`ifndef MUX8WAY16_V
+`define MUX8WAY16_V
+`include "mux4way16.v"
+`include "mux16.v"
 /**
  * 8-way 16-bit multiplexor:
  * out = a if sel == 000
@@ -12,3 +16,4 @@ module Mux8Way16(input[15:0] a,b,c,d,e,f,g,h, input[2:0] sel, output[15:0] out);
   Mux4Way16 g2(e, f, g, h, sel[1:0], outeh);
   Mux16     g3(outad, outeh, sel[2], out);
 endmodule
+`endif

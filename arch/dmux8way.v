@@ -1,3 +1,8 @@
+`ifndef DMUX8WAY_V
+`define DMUX8WAY_V
+`include "not.v"
+`include "and.v"
+`include "dmux4way.v"
 /**
  * 8-way demultiplexor:
  * {a, b, c, d, e, f, g, h} = {in, 0, 0, 0, 0, 0, 0, 0} if sel == 000
@@ -13,5 +18,5 @@ module DMux8Way(input in, input[2:0] sel, output a,b,c,d,e,f,g,h);
   DMux4Way g4(s2h, sel[1:0], e, f, g, h);
   DMux4Way g5(s2l, sel[1:0], a, b, c, d);
 endmodule
-
+`endif 
 
