@@ -1,3 +1,5 @@
+`ifndef DMUX_V
+`define DMUX_V
 /**
  * Demultiplexor:
  * if sel == 0, a= in, b = 0;
@@ -9,6 +11,8 @@ module DMux(input in, sel, output a, b);
   And g2(nsel, in, a);
   And g3(sel,  in, b);
 endmodule
+
+`endif
 
 
 

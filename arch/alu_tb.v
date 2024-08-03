@@ -1,18 +1,16 @@
 `include "nand.v"
-`include "not.v"
+
 `include "or.v"
 `include "nor.v"
 `include "and.v"
 `include "xor.v"
 `include "halfadder.v"
 `include "fulladder.v"
-`include "and16.v"
-`include "add16.v"
-`include "or16way.v"
-`include "not16.v"
+
+
 `include "mux.v"
-`include "mux16.v"
-`include "isneg.v"
+
+
 `include "alu.v"
 
 module main;

@@ -1,4 +1,5 @@
-
+`ifndef RAM16K_V
+`define RAM16K_V
 
 module RAM16K(input[15:0] in, input clock, load, input[13:0] address, output[15:0] out);
   reg[15:0] m[0:2**13-1];
@@ -9,3 +10,5 @@ module RAM16K(input[15:0] in, input clock, load, input[13:0] address, output[15:
     if (load) m[address] = in;
   end
 endmodule
+
+`endif

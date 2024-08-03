@@ -1,3 +1,6 @@
+`ifndef MUX4WAY16_V
+`define MUX4WAY16_V
+`include "mux16.v"
 /**
  * 4-way 16-bit multiplexor:
  * out = a if sel == 00
@@ -12,3 +15,4 @@ module Mux4Way16(input[15:0] a,b,c,d, input[1:0] sel, output[15:0] out);
   Mux16 g2(c, d, sel[0], outcd);
   Mux16 g3(outab, outcd, sel[1], out);
 endmodule
+`endif
