@@ -1,3 +1,5 @@
+`ifndef MUX16_V
+`define MUX16_V
 /**
  * 16-bit multiplexor: 
  * for i = 0..15 out[i] = a[i] if sel == 0 
@@ -23,3 +25,4 @@ module Mux16(input[15:0] a, b, input sel, output[15:0] out);
   Mux g00(a[0],  b[0],  sel, out[0]);
 endmodule
 
+`endif
